@@ -91,4 +91,18 @@ public class EmployeeController {
          PageResult pageResult= employeeService.pageQuery(employeePageQueryDTO);
         return Result.success(pageResult);
   }
+
+    /**
+     * 啓用和禁用員工
+     * @param status
+     * @param id
+     * @return
+     */
+  @PostMapping("status/{status}")
+  @ApiOperation("啓用和禁用員工")
+  public Result startOrStop(@PathVariable Integer status,Long id){
+        log.info("啓用和禁用員工{}{}",status,id);
+        employeeService.startOrStop(status,id);
+        return Result.success();
+  }
 }
