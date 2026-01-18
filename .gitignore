@@ -1,5 +1,11 @@
+# 忽略 .idea 目录下的所有内容，但保留目录本身
+.idea/*
+# 放行数据库配置文件
+!.idea/dataSources.xml
+!.idea/dataSources.local.xml
+
+# 其他忽略规则
 **/target/
-.idea
 *.iml
 *.class
 *Test.java
